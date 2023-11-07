@@ -1,12 +1,35 @@
-import {Link} from "react-router-dom" 
-import Megasena from "../../pages/Megasena";
+import { Link } from "react-router-dom";
+import { useLoteria } from "../../hooks";
+import "./index.css";
 
 export default function Menu() {
+  const { ativo, setAtivo } = useLoteria();
   return (
- <div>
-    <Link to="/mega"> Megasena</Link>
-    <Link to="/quina"> Quina</Link>
-    <Link to="/loto"> Lotofacil</Link>
- </div>
+    <div className="container">
+      <Link
+        to="/mega"
+        className={ativo === "megasena" ? "ativo" : "megasena"}
+        onClick={() => setAtivo("megasena")}
+      >
+        {" "}
+        Megasena
+      </Link>
+      <Link
+        to="/quina"
+        className={ativo === "quina" ? "ativo" : "quina"}
+        onClick={() => setAtivo("quina")}
+      >
+        {" "}
+        Quina
+      </Link>
+      <Link
+        to="/loto"
+        className={ativo === "lotofacil" ? "ativo" : "lotofacil"}
+        onClick={() => setAtivo("lotofacil")}
+      >
+        {" "}
+        Lotofacil
+      </Link>
+    </div>
   );
 }

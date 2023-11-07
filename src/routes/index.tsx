@@ -4,9 +4,10 @@ import Lotofacil from "../pages/Lotofacil";
 import Quina from "../pages/Quina";
 import "./index.css"
 import Menu from "../components/menu";
-
+ 
 export default function Rotas() {
   return (
+    <div className="principal-bloco">
     <BrowserRouter>
     <Menu/>
       <Routes>
@@ -19,5 +20,6 @@ export default function Rotas() {
         <Route path="/quina" element={<Quina />} />
       </Routes>
     </BrowserRouter>
+    </div>
   );
 }
